@@ -1,5 +1,5 @@
 # analisis-numerico
 
-Para instalar el requiremetns.txt
+Para instalar el requirements.txt
 
 pip install -r requirements.txt
