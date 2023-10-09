@@ -1,4 +1,5 @@
 import numpy as np
+from tabulate import tabulate
 
 # F = ODE escrita en forma estándar.(Cada vez que se quiera usar un exponente es necesitaro np.exp(x) al principio)
 # h = Tamaño del paso
@@ -19,20 +20,18 @@ y0 = 2  # Initial condition
 y = np.zeros(len(x))
 y[0] = y0
 
-# Output header
-print("---RESULTS---")
-print("X\t\tY")
+# Almacenar resultados en una lista
+results = []
 
-# Iterate over the range of x values
+# Iteración para calcular resultados
 for i in range(0, len(x) - 1):
-    # Predictor Step
     y_predictor = y[i] + h * f(x[i], y[i])
-    
-    # Corrector Step
     y[i + 1] = y[i] + 0.5 * h * (f(x[i], y[i]) + f(x[i + 1], y_predictor))
-    
-    # Print the X and Y values for each step
-    print(f"{x[i]:.2f}\t\t{y[i]:.4f}")
+    results.append([x[i], y[i]])
 
-# Print the last point
-print(f"{x[-1]:.2f}\t\t{y[-1]:.4f}")
+# Agregar el último punto
+results.append([x[-1], y[-1]])
+
+# Mostrar los resultados en formato de tabla
+table_headers = ["X", "Y"]
+print(tabulate(results, headers=table_headers, tablefmt="grid"))
