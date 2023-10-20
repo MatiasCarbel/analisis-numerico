@@ -42,4 +42,8 @@ for i, xi in enumerate(x):
 
 # Mostrar los resultados en una tabla
 table_headers = ["Iteración", "x", "y"]
-print(tabulate(results, headers=table_headers, tablefmt="grid"))
+table_format = "grid"  # Puedes cambiar esto a otros formatos si lo prefieres
+table = tabulate(results, headers=table_headers, tablefmt=table_format)
+
+# Imprimir la tabla
+print(table)
