@@ -1,5 +1,17 @@
 from tabulate import tabulate
 
+"""
+Aqui se ingresan los datos en un array de x e y , este archivo genera ambos metodos
+
+f = ingreso de la funcion (ej: 8 + 5 * cos(x))
+a = parametro inicial de la integral
+b = parametro final de la integral
+m = numero de particiones(en los ejercicios se lo muestra generalmente con "n")
+
+Resultado
+Imprime una tabla con los resultados de cada paso y el valor de la integral
+"""
+
 def simpson(x_values, y_values):
     m = len(x_values) - 1
     h = (x_values[-1] - x_values[0]) / float(m)
