@@ -44,5 +44,5 @@ b = float(input("Ingrese su parametro final:\n"))
 m = int(input("Ingrese el numero de particiones:\n"))  # Convierte a entero el numero de particiones
 
 results = trapecios(funcion, a, b, m)
-print(tabulate(results, headers=["Pasos", "Valor Integral"], tablefmt="fancy_grid"))
+print(tabulate(results, headers=["Pasos", "Valor Integral"], tablefmt="grid"))
 

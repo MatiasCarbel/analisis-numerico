@@ -44,4 +44,4 @@ m = int(input("Ingrese el numero de particiones:\n"))
 
 
 results = simpson(funcion, a, b, m)
-print(tabulate(results, headers=["Pasos", "Valor Integral"], tablefmt="fancy_grid"))
+print(tabulate(results, headers=["Pasos", "Valor Integral"], tablefmt="grid"))
