@@ -35,7 +35,7 @@ h = 0.2
 # Calcular la derivada utilizando la función five_point_difference
 results = []
 
-for i in range(n):
+for i in range(n+1):
     x = a + i * h
     dy_dx = five_point_difference(custom_function, x, h)
     real_dy_dx = real_derivative(x)
