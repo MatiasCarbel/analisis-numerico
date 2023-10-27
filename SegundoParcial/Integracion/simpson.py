@@ -29,7 +29,7 @@ def simpson(funcion, a, b, m):
 
         resul = h / 3 * (a_evaluado + s + b_evaluado)
 
-        results.append([i, resul])
+        results.append([i, n, resul])  # Agregar el valor de x
 
     return results
 
@@ -45,4 +45,4 @@ m = int(input("Ingrese el numero de particiones:\n"))
 
 
 results = simpson(funcion, a, b, m)
-print(tabulate(results, headers=["Pasos", "Valor Integral"], tablefmt="grid"))
+print(tabulate(results, headers=["Pasos", "Valor de x", "Valor Integral"], tablefmt="grid"))

@@ -1,4 +1,4 @@
-from sympy import sympify
+from sympy import *
 from tabulate import tabulate
 
 """
@@ -12,6 +12,7 @@ Imprime una tabla con los resultados de cada paso y el valor de la integral
 """
 
 
+
 def trapecios(funcion, a, b, m):
     h = (b - a) / float(m)
     s = 0
@@ -21,7 +22,7 @@ def trapecios(funcion, a, b, m):
 
     results = []
 
-    for i in range(1, m ):
+    for i in range(1, m + 1):  # Modificado para calcular 10 particiones
         n = a + (i * h)
         n_evaluado = funcion.evalf(subs={"x": n})
         s = s + n_evaluado
@@ -30,19 +31,20 @@ def trapecios(funcion, a, b, m):
         b_evaluado = funcion.evalf(subs={"x": b})
         resul = h / 2 * (a_evaluado + 2 * s + b_evaluado)
 
-        results.append([i, resul])
+        results.append([i, n, resul])
 
     return results
 
-print("Super calculo de integrales simples con metodo del trapecio c:")
+print("Super cálculo de integrales simples con método del trapecio c:")
 
-f = input("Ingrese su funcion en terminos de x:\n")
+f = input("Ingrese su función en términos de x:\n")
 funcion = sympify(f)
 
-a = float(input("Ingrese su parametro inicial:\n"))
-b = float(input("Ingrese su parametro final:\n"))
-m = int(input("Ingrese el numero de particiones:\n"))  # Convierte a entero el numero de particiones
+a = float(input("Ingrese su parámetro inicial:\n"))
+b = 2 * pi
+m = int(input("Ingrese el número de particiones :\n"))
 
 results = trapecios(funcion, a, b, m)
-print(tabulate(results, headers=["Pasos", "Valor Integral"], tablefmt="grid"))
+print(tabulate(results, headers=["Pasos", "Valor de x", "Valor Integral"], tablefmt="grid"))
+
 
