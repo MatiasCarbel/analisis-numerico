@@ -15,16 +15,18 @@ def three_point_difference(func, x, h):
 
 # Definir la función proporcionada
 def custom_function(x):
-    return (1/x)+(x**2/2)
+    return ((3 * x - 1) / (x**2 + 1))**2 
 
 # Definir la derivada real de la función (sustituye con la derivada real si la conoces)
 def real_derivative(x):
-    return -1/(x**2) + x
+    numerator = (3 * x - 1) * (3 * x**2 + 3 - 6 * x**2 + 2 * x)
+    denominator = (x**2 + 1)**2
+    return 2 * numerator / denominator
 
 # Definir los parámetros
-a = 1  # Extremo inferior del intervalo
-b = 2  # Extremo superior del intervalo
-n = 6  # Número de puntos
+a = 0  # Extremo inferior del intervalo
+b = 2  # Extremo superior del intervalo 
+n = 10  # Número de puntos
 
 # Espaciado entre puntos
 h = 0.2
@@ -32,7 +34,7 @@ h = 0.2
 # Calcular la derivada utilizando la función three_point_difference
 results = []
 
-for i in range(n):
+for i in range(n+1):
     x = a + i * h
     dy_dx = three_point_difference(custom_function, x, h)
     real_dy_dx = real_derivative(x)
