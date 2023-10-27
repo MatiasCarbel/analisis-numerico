@@ -1,4 +1,4 @@
-from sympy import*
+from sympy import *
 from tabulate import tabulate
 
 """
@@ -19,7 +19,7 @@ def simpson(funcion, a, b, m):
 
     results = []
 
-    for i in range(1, m ):
+    for i in range(1, m + 1):
         n = x + (i * h)
         n_evaluado = funcion.evalf(subs={"x": n})
         s = s + 2 * (i % 2 + 1) * n_evaluado
@@ -33,13 +33,14 @@ def simpson(funcion, a, b, m):
 
     return results
 
+
 print ("Super calculo de integrales simples con el metodo de simpson c:")
 
 f = input("Ingrese su funcion en terminos de x:\n")
 funcion = sympify(f)
 
 a = float(input("Ingrese su parametro inicial:\n"))
-b = float(input("Ingrese su parametro final:\n"))
+b = 2 * pi
 m = int(input("Ingrese el numero de particiones:\n"))
 
 
