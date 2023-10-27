@@ -29,7 +29,7 @@ def simpson(funcion, a, b, m):
 
         resul = h / 3 * (a_evaluado + s + b_evaluado)
 
-        results.append([i, n, resul])  # Agregar el valor de x
+        results.append([i, n, resul]) 
 
     return results
 
