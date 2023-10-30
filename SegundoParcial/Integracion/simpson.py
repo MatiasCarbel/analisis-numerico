@@ -36,12 +36,13 @@ def simpson(funcion, a, b, m):
 
 print ("Super calculo de integrales simples con el metodo de simpson c:")
 
-f = input("Ingrese su funcion en terminos de x:\n")
+x = Symbol('x')
+f = exp(0.1*x)*cos(x)
 funcion = sympify(f)
 
-a = float(input("Ingrese su parametro inicial:\n"))
-b = 2 * pi
-m = int(input("Ingrese el numero de particiones:\n"))
+a =  -1.57079 # -pi/2
+b = 7.85398 # 5/2*pi
+m = 20 # 20 particiones
 
 
 results = simpson(funcion, a, b, m)

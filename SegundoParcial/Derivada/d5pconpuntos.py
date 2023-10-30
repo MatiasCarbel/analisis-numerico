@@ -29,15 +29,21 @@ def five_point_difference(x_values, y_values, h):
     return np.array(derivative)
 
 # Ejemplo de entrada de valores X e Y
-x_values = [0.0000, 0.1000, 0.2000, 0.3000, 0.4000]
-y_values = [1.0000, 7.0000, 4.0000, 3.0000, 5.0000]
+x_values = [-1.09955, -0.628313, -0.157075, 0.314164, 0.785403, 1.25664, 1.72788, 2.19912, 2.67036, 3.1416, 3.61283, 4.08407, 4.55531, 5.02655, 5.49779, 5.96903, 6.44026, 6.9115, 7.38274, 7.85398]
+y_values = [0.255553, 0.494236, 1.10515, 1.41347, 1.89405, 2.00413, 1.8873, 1.65722, 0.926025, 0.495908, -0.307551, -0.585353, -0.740357, -0.579873, 0.19002, 0.732755, 1.91443, 2.42173, 3.01857, 3.01857]
 
-# Espaciado entre puntos
-h = 0.1
+# Espaciado entre puntos (puedes mantener tu valor de h si es adecuado)
+h = 0.47123
 
 # Calcular la derivada utilizando la función five_point_difference
 result = five_point_difference(x_values, y_values, h)
 
-# Imprimir los resultados
-table = tabulate(result, headers=["X", "Fd(X) METODO"], tablefmt="pretty")
+
+# Redondear los valores a cuatro decimales
+result_rounded = [(x, round(y, 4)) for x, y in result]
+
+# Imprimir los resultados con cuatro decimales
+table = tabulate(result_rounded, headers=["X", "Fd(X) METODO"], tablefmt="pretty")
 print(table)
+
+

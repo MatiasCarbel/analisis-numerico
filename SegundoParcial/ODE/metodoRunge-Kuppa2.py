@@ -22,10 +22,10 @@ def runge_kutta_second_order(f, x, y0, h):
     return results
 
 # Definición de la ecuación diferencial y los parámetros
-f = lambda x, y: 2*y - 6
-h = 0.1  # Tamaño del paso
-x = np.arange(0, 2 + h, h)
-y0 = 1  # Condición inicial
+f = lambda x, y: x + y*np.exp(2)
+h = 0.25  # Tamaño del paso
+x = np.arange(1, 5 + h, h)
+y0 = 0  # Condición inicial
 
 # Calcular los resultados utilizando el método de Runge-Kutta   
 results = runge_kutta_second_order(f, x, y0, h)

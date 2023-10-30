@@ -13,10 +13,10 @@ El resultado va a ser mostrado en una lsita por interaciones, y al final se impr
 """
 
 # Definición de la ecuación diferencial y los parámetros
-f = lambda x, y: np.exp(0.8 * x) - 0.5 * y
-h = 0.1  # Tamaño del paso
-x = np.arange(0, 4 + h, h)
-y0 = 2  # Condición inicial
+f = lambda x, y: x + y*np.exp(2)
+h = 0.25  # Tamaño del paso
+x = np.arange(1, 5 + h, h)
+y0 = 0  # Condición inicial
 
 # Método de Runge-Kutta de cuarto orden
 y = np.zeros(len(x))
